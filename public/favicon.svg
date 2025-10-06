@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ground Sigil: Outer square (gold), Inner circle (earth), Vertical line (white), Transparent background -->
+  <!-- Colors: Gold #C9A857, Earth #2F2B28, White #FAFAFA -->
+  <!-- Geometry: Square centered, Circle inscribed, Line vertical through center -->
+  
+  <!-- Outer Square -->
+  <rect x="112" y="112" width="800" height="800"
+        fill="none"
+        stroke="#C9A857"
+        stroke-width="8"
+        stroke-linejoin="miter"
+        shape-rendering="geometricPrecision"/>
+  
+  <!-- Inner Circle (inscribed in the square) -->
+  <circle cx="512" cy="512" r="400"
+          fill="none"
+          stroke="#2F2B28"
+          stroke-width="6"
+          shape-rendering="geometricPrecision"/>
+  
+  <!-- Vertical Line (center) -->
+  <line x1="512" y1="112" x2="512" y2="912"
+        stroke="#FAFAFA"
+        stroke-width="10"
+        shape-rendering="geometricPrecision"/>
+</svg>
