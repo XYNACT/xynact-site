@@ -1,0 +1,133 @@
+---
+import "../styles/global.css";
+
+// Editable product + link config
+const ISBN_VOL1 = "978-82-XXXX-XXX-X"; // replace when assigned
+
+const LINKS = {
+  vol1_print: "https://store.xynact.com/vol1",        // Printful/KDP product page (placeholder)
+  vol1_pdf: "/pdfs/GROUNDATIVE_TREATISE_VOL_I_FOUNDATION_DIGITAL_ED_2025.pdf",
+  vol1_archival: "/pdfs/GROUNDATIVE_TREATISE_VOL_I_FOUNDATION_ARCHIVAL_2025_PDF-A1a.pdf",
+  merch_shirt: "https://store.xynact.com/sigil-shirt", // Printful shirt (placeholder)
+  merch_poster: "https://store.xynact.com/sigil-poster",
+  merch_sticker: "https://store.xynact.com/sigil-sticker",
+  press_kit: "/assets/press-kit.zip",                  // put a zip with logo/sigil/author photo/one-sheet
+  wholesale_form: "#wholesale",                        // on-page anchor (Netlify form below)
+  rights_email: "mailto:press@xynact.com"
+};
+---
+
+<main class="page">
+  <header class="page-head">
+    <h1>XYNACT Press</h1>
+    <p class="muted">Publications · Merch · Press Materials</p>
+  </header>
+
+  <!-- VOLUME I -->
+  <section class="block">
+    <h2 class="h2">The Groundative Treatise · Volume I — Foundation</h2>
+    <p class="muted">A descriptive–presential framework of reality. First edition, 2025.</p>
+
+    <div class="card">
+      <div class="card-body">
+        <ul class="meta">
+          <li><strong>Author:</strong> XYNACT / Martin A. Aasen Vikesland</li>
+          <li><strong>Imprint:</strong> XYNACT Press · xynact.com</li>
+          <li><strong>ISBN:</strong> {ISBN_VOL1} (print)</li>
+          <li><strong>Format:</strong> 6×9 in · mono · PDF/A available</li>
+          <li><strong>Rights:</strong> All rights reserved</li>
+        </ul>
+
+        <div class="row">
+          <a class="button" href={LINKS.vol1_print} target="_blank" rel="noopener">Buy Print Edition</a>
+          <a class="button" href={LINKS.vol1_pdf} target="_blank" rel="noopener">Read / Download PDF</a>
+          <a class="button" href={LINKS.vol1_archival} target="_blank" rel="noopener">Download Archival PDF/A</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- MERCH -->
+  <section class="block">
+    <h2 class="h2">Merch · The Ground Sigil</h2>
+    <p class="muted">Minimal pieces for those who stand in the real.</p>
+
+    <div class="grid goods">
+      <div class="good">
+        <img src="/assets/merch-sigil-shirt.jpg" alt="Sigil Shirt" loading="lazy" />
+        <h3>Sigil Shirt</h3>
+        <a class="button" href={LINKS.merch_shirt} target="_blank" rel="noopener">Order</a>
+      </div>
+      <div class="good">
+        <img src="/assets/merch-sigil-poster.jpg" alt="Sigil Poster" loading="lazy" />
+        <h3>Sigil Poster</h3>
+        <a class="button" href={LINKS.merch_poster} target="_blank" rel="noopener">Order</a>
+      </div>
+      <div class="good">
+        <img src="/assets/merch-sigil-sticker.jpg" alt="Sigil Sticker" loading="lazy" />
+        <h3>Sigil Sticker</h3>
+        <a class="button" href={LINKS.merch_sticker} target="_blank" rel="noopener">Order</a>
+      </div>
+    </div>
+
+    <p class="muted" style="margin-top:.75rem">
+      Fulfilled by Printful (or equivalent). Neutral colors only; the sigil remains unmodified.
+    </p>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- PRESS MATERIALS -->
+  <section class="block">
+    <h2 class="h2">Press Materials</h2>
+    <p class="mb-4">
+      Download the official press kit: author photo, sigil, one-sheet, book cover, and description.
+    </p>
+    <div class="row">
+      <a class="button" href={LINKS.press_kit} download>Download Press Kit (.zip)</a>
+      <a class="button" href={LINKS.rights_email}>Rights & Permissions</a>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- WHOLESALE / BOOKSTORES / LIBRARIES -->
+  <section class="block" id="wholesale">
+    <h2 class="h2">Wholesale · Bookstores · Libraries</h2>
+    <p class="mb-3">
+      For trade orders, institutional purchase, or library supply, submit the form below.
+      We respond with terms, lead times, and shipping options.
+    </p>
+
+    <form name="wholesale" method="POST" data-netlify="true" class="flex flex-col gap-4 mt-4">
+      <input type="hidden" name="form-name" value="wholesale" />
+      <label>
+        Organization / Store
+        <input type="text" name="org" class="input" required />
+      </label>
+      <label>
+        Contact Name
+        <input type="text" name="name" class="input" required />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" class="input" required />
+      </label>
+      <label>
+        Quantity / Notes
+        <textarea name="notes" rows="5" class="input" required></textarea>
+      </label>
+      <button type="submit" class="button">Submit Wholesale Inquiry</button>
+    </form>
+
+    <p class="muted" style="margin-top:.5rem">
+      Alternative: email <a href={LINKS.rights_email}>press@xynact.com</a>
+    </p>
+  </section>
+
+  <footer class="foot">
+    © 2025 XYNACT · What Is, Is · Groundative Tradition
+  </footer>
+</main>
